@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,700;1,400&display=swap');
+$Softred: hsl(10, 79%, 65%);
+$Cyan: hsl(186, 34%, 60%);
+$Darkbrown: hsl(25, 47%, 15%);
+$Mediumbrown: hsl(28, 10%, 53%);
+$Cream: hsl(27, 66%, 92%);
+$Verypaleorange: hsl(33, 100%, 98%);
+
+* ,
+*::after,
+*::before{
+
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background-color:$Cream;
+    @media (max-width : 545px){
+        font-size: clamp(12px ,calc(5px + 2vw) ,18px  );
+    }
+}
+.flex{
+    display: flex;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+header, main, footer{
+    width: 100%;
+}
+p{
+    opacity: .6;
+    font-weight: 400;
+    
+}
+h2{
+    font-size: 1.8em;
+}
+h1{
+    font-size: 2.6em;
+}   
+
+

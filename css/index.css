@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,700;1,400&display=swap");
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background-color: hsl(27deg, 66%, 92%);
+}
+@media (max-width: 545px) {
+  body {
+    font-size: clamp(12px, 5px + 2vw, 18px);
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+header, main, footer {
+  width: 100%;
+}
+
+p {
+  opacity: 0.6;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h1 {
+  font-size: 2.6em;
+}
+
+.container {
+  margin: 0 auto;
+  width: min(540px, 92%);
+}
+.container > * {
+  border-radius: 1rem;
+}
+.container .balance {
+  background-color: hsl(10deg, 79%, 65%);
+  padding: 1.77em;
+  color: white;
+  margin-bottom: 1.33em;
+  justify-content: space-between;
+}
+.container .balance .balance-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+.container .graph {
+  background-color: hsl(33deg, 100%, 98%);
+  padding: 2.33em;
+}
+.container .graph p {
+  color: hsl(28deg, 10%, 53%);
+}
+.container .graph .charts {
+  padding: 0 0 1.6em 0;
+  border-bottom: 2px solid hsl(27deg, 66%, 92%);
+  justify-content: space-between;
+}
+.container .graph .charts .chart {
+  display: flex;
+  flex-direction: column;
+  width: min(50px, 11%);
+}
+.container .graph .charts .chart .diagram {
+  height: 200px;
+  display: flex;
+}
+.container .graph .charts .chart .diagram .fill {
+  width: 100%;
+  background-color: hsl(10deg, 79%, 65%);
+  align-self: flex-end;
+  border-radius: 0.3rem;
+  position: relative;
+}
+.container .graph .charts .chart .diagram .fill:hover {
+  cursor: pointer;
+  transition: background-color 0.5s;
+  background-color: #f29e8d;
+}
+.container .graph .charts .chart .diagram .fill:hover > p {
+  opacity: 1;
+}
+.container .graph .charts .chart .diagram .fill.max {
+  background-color: hsl(186deg, 34%, 60%);
+}
+.container .graph .charts .chart .diagram .fill.max:hover {
+  background-color: #98c7cd;
+}
+.container .graph .charts .chart .diagram .ammount {
+  font-size: 0.9em;
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5em 0.5em;
+  background-color: hsl(25deg, 47%, 15%);
+  color: white;
+  border-radius: 0.4rem;
+  transition: opacity 0.5s;
+  opacity: 0;
+  z-index: 2;
+}
+@media (max-width: 425px) {
+  .container .graph .charts .chart .diagram .ammount {
+    top: -35px;
+  }
+}
+.container .graph .charts .chart .day-name {
+  margin-top: 0.7em;
+  text-align: center;
+  font-size: 0.9em;
+}
+.container .graph .invest {
+  padding: 2em 0 0.5em 0;
+  justify-content: space-between;
+}
+.container .graph .invest .total-spent {
+  gap: 0.3em;
+}
+.container .graph .invest .desc {
+  justify-content: flex-end;
+}
+.container .graph .invest .desc h3 {
+  text-align: right;
+  font-size: 1.1em;
+}
+@media (max-width: 425px) {
+  .container .balance,
+.container .graph {
+    padding: 20px;
+  }
+  .container .graph {
+    gap: 2%;
+  }
+  .container .graph .diagram {
+    height: 180px;
+  }
+  .container .graph .invest {
+    padding-top: 1.5em;
+  }
+}/*# sourceMappingURL=index.css.map */

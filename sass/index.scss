@@ -1,0 +1,124 @@
+
+@use 'general' as g;
+.container{
+    margin: 0 auto;
+    width: min(540px,92%);
+    & > *{
+        border-radius: 1rem;
+    }
+    .balance {
+        background-color: g.$Softred;
+        padding: 1.77em; 
+        color: white;
+        margin-bottom: 1.33em;
+        justify-content: space-between;
+        .balance-wrapper{
+            display: flex;
+            flex-direction: column;
+            gap: .3em;
+        }
+    }
+    .graph{
+        background-color: g.$Verypaleorange;
+        padding: 2.33em;
+        p{
+            color: g.$Mediumbrown
+        }
+
+        .charts{
+            padding: 0 0 1.6em 0;
+            border-bottom: 2px solid g.$Cream;
+            justify-content: space-between;
+            .chart{
+                display: flex;
+                flex-direction: column;
+                width: min(50px,11%);
+                .diagram{
+                    height: 200px;
+                    display: flex;
+
+                    .fill{
+                        width: 100%;
+
+                        background-color: g.$Softred;
+                        align-self: flex-end;
+                        border-radius: .3rem;
+                        position: relative;
+                        
+
+                        &:hover{
+                            cursor: pointer;
+                            transition: background-color .5s;
+                            background-color: lighten( g.$Softred, 10%);
+                            & > p{
+                                opacity: 1;
+                            }
+                        }
+
+                        &.max{
+                            background-color: g.$Cyan;
+                            &:hover{
+                                background-color: lighten( g.$Cyan, 10%);
+                            }
+                        }
+                    }
+                    .ammount{
+                        font-size: .9em;
+                        position: absolute;
+                        top: -45px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        padding: .5em .5em;
+                        background-color: g.$Darkbrown;
+                        color: white;
+                        border-radius: .4rem;
+                        transition: opacity .5s;
+                        opacity: 0;
+                        z-index: 2;
+                        @media(max-width: 425px){
+                            top: -35px;
+                        }
+                        
+                    }
+                }
+                .day-name{
+                    margin-top: .7em;
+                    text-align: center;
+                    font-size: .9em;
+                }
+            }
+        }
+        .invest{
+            padding: 2em 0 .5em 0;
+            justify-content: space-between;
+            .total-spent{
+                gap: .3em;
+            }
+            .desc{
+                justify-content: flex-end;
+                h3{
+                    text-align: right;
+                    font-size: 1.1em;
+                   
+                }
+            }
+        }
+    }
+    @media(max-width: 425px){
+        .balance,
+        .graph{
+            padding: 20px;
+        }
+        .graph{
+            gap: 2%;
+            .diagram{
+                height: 180px;
+            }
+            .invest{
+                padding-top: 1.5em;
+            }
+   
+        }
+        
+    }
+}
